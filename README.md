@@ -247,7 +247,3 @@ This project is for educational use in a controlled lab. Run it only on systems 
 The Level 3 server deliberately implements a fixed allowlist and does not execute arbitrary operating-system commands. Do not expose a learning listener to untrusted networks or treat this project as a secure remote-administration product.
 
 For legitimate remote administration, use an established, authenticated and encrypted solution such as SSH.
-
-## Technical note: TCP message boundaries
-
-TCP provides a byte stream; a single `send()` does not necessarily correspond to a single `recv()`. Level 2 uses newline-delimited messages, and Level 3's `MessageReader` buffers incoming bytes until it has a complete newline-terminated JSON message.
